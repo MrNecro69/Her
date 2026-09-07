@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09070d">
+<title>Her — a feeling I never said</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@400;500;600;700&family=DM+Mono:wght@300;400&family=Manrope:wght@300;400;500;600&display=swap');
+:root{--bg:#09070d;--ink:#f6f0e8;--soft:#cfc4c8;--rose:#d88b9a;--wine:#5d273b;--gold:#d7b57c;--violet:#8e77b8;--line:#ffffff18}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}body{font-family:Manrope,Arial,sans-serif}button{font:inherit}.app{height:100%;overflow:hidden;position:relative;background:radial-gradient(circle at 50% 20%,#281526 0,#0b0810 42%,#050408 100%)}
+/* ambient universe */
+.aurora{position:fixed;inset:-30%;pointer-events:none;filter:blur(45px);opacity:.55;background:conic-gradient(from 120deg at 50% 50%,transparent 0 22%,#6f3d70 29%,transparent 38% 55%,#b35f72 64%,transparent 74%);animation:drift 18s ease-in-out infinite alternate}.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}.orb{position:fixed;width:180px;height:180px;border-radius:50%;border:1px solid #ffffff12;right:-70px;top:15%;box-shadow:0 0 90px #d88b9a18;animation:float 7s ease-in-out infinite}.orb:before{content:'';position:absolute;inset:25px;border:1px solid #d7b57c22;border-radius:50%;animation:spin 14s linear infinite}
+@keyframes drift{from{transform:rotate(-8deg) translate(-3%,-2%)}to{transform:rotate(9deg) translate(4%,3%)}}@keyframes float{50%{transform:translateY(-25px) scale(1.05)}}@keyframes spin{to{transform:rotate(360deg)}}
+.header{position:fixed;z-index:80;top:18px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center}.brand,.page{font:10px 'DM Mono';letter-spacing:3px;color:#ffffff8a}.brand{color:#f6f0e8}.sound{position:fixed;z-index:90;right:18px;top:48px;width:44px;height:44px;border-radius:50%;border:1px solid #ffffff20;background:#ffffff08;color:#fff;backdrop-filter:blur(12px);cursor:pointer}.sound.on{border-color:#d88b9a66;box-shadow:0 0 25px #d88b9a25}.soundBars{display:flex;gap:2px;align-items:center;justify-content:center;height:100%}.soundBars i{width:2px;height:7px;background:var(--rose);display:block}.sound.on i{animation:beat .65s infinite alternate}.sound.on i:nth-child(2){animation-delay:-.15s}.sound.on i:nth-child(3){animation-delay:-.3s}.sound.on i:nth-child(4){animation-delay:-.45s}@keyframes beat{to{height:19px}}
+.progress{position:fixed;z-index:80;left:20px;right:20px;bottom:18px;height:1px;background:#ffffff14}.progress i{display:block;height:100%;width:12.5%;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .8s cubic-bezier(.22,1,.36,1)}
+.stage{height:100%;position:relative}.slide{position:absolute;inset:0;padding:70px 24px 65px;display:grid;place-items:center;opacity:0;visibility:hidden;transform:scale(1.035);transition:opacity .8s ease,transform 1s cubic-bezier(.16,1,.3,1),visibility .8s}.slide.active{opacity:1;visibility:visible;transform:scale(1)}.inner{width:min(1050px,100%);position:relative}
+.k{font:10px 'DM Mono';letter-spacing:3px;text-transform:uppercase;color:#ffffff66}.serif{font-family:'Cormorant Garamond',serif}.muted{color:#bdb2b8}.tiny{font-size:11px;line-height:1.7;color:#ffffff62}
+/* 01: cinematic title / liquid ring */
+.s1{text-align:center}.s1 .inner{height:100%;display:grid;place-items:center}.halo{position:absolute;width:min(72vw,620px);aspect-ratio:1;border-radius:50%;border:1px solid #d88b9a28;box-shadow:inset 0 0 80px #d88b9a0b,0 0 100px #d88b9a10;animation:pulse 4s ease-in-out infinite}.halo:before,.halo:after{content:'';position:absolute;border-radius:50%;border:1px solid #d7b57c22;inset:10%;animation:spin 22s linear infinite}.halo:after{inset:22%;animation-direction:reverse;animation-duration:16s;border-color:#8e77b833}.s1 h1{font:500 clamp(95px,22vw,220px)/.72 'Cormorant Garamond';letter-spacing:-8px;margin:0;position:relative}.s1 h1 span{display:inline-block;color:var(--rose);font-style:italic;animation:softFloat 4s ease-in-out infinite}.s1 .sub{margin:35px auto 0;max-width:400px;font:italic 19px/1.5 'Cormorant Garamond';color:#d8ced0}.enter{margin-top:27px;padding:12px 18px;border:1px solid #ffffff24;background:#ffffff07;color:#fff;border-radius:100px;font:10px 'DM Mono';letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.3s}.enter:hover{background:#d88b9a18;border-color:#d88b9a66;transform:translateY(-2px)}@keyframes pulse{50%{transform:scale(1.035);opacity:.7}}@keyframes softFloat{50%{transform:translateY(-9px) rotate(-2deg)}}
+.openingSong{margin:14px auto 0;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:3}
+.openingPlay{display:flex;align-items:center;gap:11px;padding:11px 15px 11px 12px;border:1px solid #d88b9a42;background:linear-gradient(135deg,#ffffff0b,#d88b9a0b);color:#f6f0e8;border-radius:999px;cursor:pointer;backdrop-filter:blur(14px);box-shadow:0 10px 35px #0005,0 0 25px #d88b9a0b;transition:.35s cubic-bezier(.22,1,.36,1)}
+.openingPlay:hover{transform:translateY(-3px) scale(1.025);border-color:#d88b9a88;box-shadow:0 14px 40px #0007,0 0 35px #d88b9a20}
+.miniHeart{font-size:13px;color:var(--rose);display:inline-block;transform-origin:center;animation:tinyHeart 1.7s ease-in-out infinite}
+.openingPlay.playing .miniHeart{animation:heartBeatMini .8s ease-in-out infinite}
+.openingPlayText{font:9px 'DM Mono';letter-spacing:2px;text-transform:uppercase;color:#eee4e5}
+.miniBars{display:flex;align-items:center;gap:2px;height:16px;margin-left:2px}
+.miniBars i{width:2px;height:5px;background:var(--gold);display:block;border-radius:2px}
+.openingPlay.playing .miniBars i{animation:miniWave .55s ease-in-out infinite alternate}
+.openingPlay.playing .miniBars i:nth-child(2){animation-delay:-.12s}
+.openingPlay.playing .miniBars i:nth-child(3){animation-delay:-.24s}
+.openingPlay.playing .miniBars i:nth-child(4){animation-delay:-.36s}
+.songHint{font:italic 12px 'Cormorant Garamond';color:#ffffff4d;letter-spacing:.2px;transition:.4s}
+.openingSong.playing .songHint{color:#d7b57c99}
+@keyframes tinyHeart{50%{transform:scale(1.15)}}
+@keyframes heartBeatMini{0%,100%{transform:scale(1)}15%{transform:scale(1.28)}30%{transform:scale(1)}45%{transform:scale(1.18)}}
+@keyframes miniWave{to{height:14px}}
+.s1:after{content:'♡';position:absolute;left:50%;top:16%;transform:translateX(-50%);font:28px 'Cormorant Garamond';color:#d88b9a22;animation:floatHeart 5s ease-in-out infinite;pointer-events:none}
+@keyframes floatHeart{0%,100%{opacity:.25;transform:translate(-50%,0) scale(1)}50%{opacity:.65;transform:translate(-50%,-14px) scale(1.08)}}
+.s4 .inner:before,.s4 .inner:after{content:'♡';position:absolute;color:#d88b9a22;font:38px 'Cormorant Garamond';animation:sideHeart 4s ease-in-out infinite}
+.s4 .inner:before{left:7%;top:18%}.s4 .inner:after{right:7%;bottom:18%;animation-delay:-2s}
+@keyframes sideHeart{50%{transform:translateY(-12px) rotate(8deg);opacity:.7}}
+
+/* 02: ink bloom */
+.s2{background:radial-gradient(circle at 25% 35%,#412033,transparent 28%),#0c0910}.s2 .inner{min-height:70vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px}.ink{width:min(430px,75vw);aspect-ratio:1;margin:auto;position:relative;filter:blur(.1px)}.ink span{position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);margin:calc(var(--s)/-2);border-radius:48% 52% 55% 45%;background:radial-gradient(circle at 35% 30%,#d88b9a99,#6b304d 45%,#17101d 72%);opacity:0;transform:scale(0);animation:bloom 5.5s ease-out infinite;animation-delay:var(--d);filter:blur(1px)}.ink span:nth-child(1){--s:210px;--d:0s}.ink span:nth-child(2){--s:170px;--d:.35s}.ink span:nth-child(3){--s:130px;--d:.7s}.ink span:nth-child(4){--s:85px;--d:1.05s}.ink span:nth-child(5){--s:50px;--d:1.4s}@keyframes bloom{0%{opacity:0;transform:scale(.05) rotate(0)}18%{opacity:.7}70%{opacity:.22}100%{opacity:0;transform:scale(1.7) rotate(40deg)}}.s2 h2{font:500 clamp(52px,8vw,92px)/.82 'Cormorant Garamond';margin:18px 0}.s2 h2 em{color:var(--rose)}.reveal{opacity:0;transform:translateY(18px);transition:.9s .15s}.active .reveal{opacity:1;transform:none}
+/* 03: constellation / memories */
+.s3{background:#080b12}.constellation{height:min(68vh,570px);position:relative;overflow:hidden}.constellation svg{position:absolute;inset:0;width:100%;height:100%;opacity:.65}.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 15px #fff;animation:twinkle 2.2s ease-in-out infinite alternate}.s3 .quote{position:absolute;left:8%;top:31%;width:min(650px,80%)}.s3 h2{font:500 clamp(55px,9vw,110px)/.8 'Cormorant Garamond';letter-spacing:-2px}.s3 h2 em{color:var(--gold)}.s3 .foot{margin-top:28px;font:italic 18px 'Cormorant Garamond';color:#c4bcc2}@keyframes twinkle{to{opacity:.15;transform:scale(.55)}}
+/* 04: heartbeat line */
+.s4{background:#12090e}.s4 .inner{text-align:center}.heartWrap{height:160px;display:grid;place-items:center;margin-bottom:15px}.heart{width:100px;height:90px;position:relative;transform:rotate(-45deg);animation:heart 1.8s ease-in-out infinite}.heart:before,.heart:after{content:'';position:absolute;background:var(--rose);width:100px;height:100px;border-radius:50%}.heart:before{top:-50px;left:0}.heart:after{left:50px;top:0}.heart i{position:absolute;background:var(--rose);width:100px;height:100px;z-index:2}.s4 h2{font:600 clamp(65px,13vw,150px)/.78 'Cormorant Garamond';letter-spacing:-5px}.s4 h2 span{color:var(--rose);font-style:italic}.pulseLine{width:min(600px,90vw);height:50px;margin:35px auto 25px;position:relative}.pulseLine svg{width:100%;height:100%;overflow:visible}.pulseLine path{fill:none;stroke:#d7b57c;stroke-width:1.5;stroke-dasharray:800;stroke-dashoffset:800;animation:ecg 2.8s linear infinite}@keyframes heart{0%,100%{transform:rotate(-45deg) scale(1)}10%{transform:rotate(-45deg) scale(1.13)}18%{transform:rotate(-45deg) scale(1)}28%{transform:rotate(-45deg) scale(1.08)}}@keyframes ecg{to{stroke-dashoffset:0}}
+/* 05: magnetic message */
+.s5{background:radial-gradient(circle at 70% 20%,#302042,transparent 35%),#0a0910}.s5 .inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.messageIntro h2{font:500 clamp(55px,9vw,105px)/.82 'Cormorant Garamond';margin:18px 0}.chat{width:min(400px,88vw);margin:auto;padding:20px;border:1px solid #ffffff15;background:#ffffff06;border-radius:30px;box-shadow:0 25px 80px #0008;backdrop-filter:blur(18px);transform:rotate(2deg);animation:phoneFloat 5s ease-in-out infinite}.chatTop{display:flex;align-items:center;gap:10px;padding-bottom:17px;border-bottom:1px solid #ffffff12}.avatar{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f4c4ca,#7a405b);box-shadow:0 0 20px #d88b9a33}.chatTop b{font-size:12px;font-weight:500}.chatTop small{display:block;color:#ffffff45;font-size:9px;margin-top:3px}.bubble{margin-top:22px;max-width:85%;padding:15px 16px;border-radius:18px 18px 18px 4px;background:#f5eee8;color:#171017;font:15px/1.55 'Cormorant Garamond';font-weight:600}.bubble.two{margin-left:auto;border-radius:18px 18px 4px 18px;background:#6e4056;color:#fff;animation:appear 1s .7s both}.typing{margin-top:18px;color:#ffffff35;font:9px 'DM Mono';letter-spacing:1px}@keyframes phoneFloat{50%{transform:rotate(-1deg) translateY(-12px)}}@keyframes appear{from{opacity:0;transform:translateY(12px) scale(.95)}to{opacity:1;transform:none}}
+/* 06: glass confession */
+.s6{background:linear-gradient(135deg,#13111b,#0a0b10)}.glass{width:min(850px,94vw);padding:clamp(35px,7vw,75px);border:1px solid #ffffff18;border-radius:35px;background:linear-gradient(135deg,#ffffff0c,#ffffff02);backdrop-filter:blur(20px);box-shadow:0 35px 100px #0008;position:relative;overflow:hidden}.glass:before{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:#d88b9a20;filter:blur(30px);right:-90px;top:-100px}.glass h2{font:500 clamp(54px,9vw,100px)/.82 'Cormorant Garamond';margin:17px 0 30px}.glass h2 em{color:var(--rose)}.glass p{max-width:650px;color:#c9c0c5;font-size:15px;line-height:1.9}.signature{margin-top:32px;font:italic 24px 'Cormorant Garamond';color:var(--gold)}
+/* 07: vinyl player */
+.s7{background:#0b0a0d}.s7 .inner{text-align:center}.record{width:min(330px,70vw);aspect-ratio:1;border-radius:50%;margin:0 auto 28px;background:repeating-radial-gradient(circle,#111 0 2px,#19171b 3px 4px);box-shadow:0 0 0 8px #18151b,0 30px 90px #000;position:relative;animation:spin 8s linear infinite}.record:before{content:'';position:absolute;inset:37%;border-radius:50%;background:#b86f80}.record:after{content:'';position:absolute;width:18px;height:18px;left:calc(50% - 9px);top:calc(50% - 9px);border-radius:50%;background:#09070d}.s7 h2{font:500 clamp(52px,9vw,95px)/.82 'Cormorant Garamond';margin-bottom:12px}.player{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:25px}.play{width:52px;height:52px;border-radius:50%;border:1px solid #ffffff2a;background:#ffffff08;color:#fff;cursor:pointer}.wave{display:flex;gap:3px;align-items:center;height:30px}.wave i{width:2px;height:7px;background:var(--rose)}.wave.on i{animation:wave .55s infinite alternate}.wave.on i:nth-child(2){animation-delay:-.1s}.wave.on i:nth-child(3){animation-delay:-.2s}.wave.on i:nth-child(4){animation-delay:-.3s}.wave.on i:nth-child(5){animation-delay:-.4s}@keyframes wave{to{height:28px}}
+/* 08: melting ending */
+.s8{background:radial-gradient(circle at 50% 35%,#38202d 0,#100b12 42%,#07060a 100%);text-align:center}.s8 .inner{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center}.melt{font:500 clamp(75px,18vw,180px)/.72 'Cormorant Garamond';letter-spacing:-7px;position:relative}.melt span{display:inline-block;color:var(--rose);animation:drip 3.5s ease-in-out infinite}.melt span:nth-child(2){animation-delay:.2s}.melt span:nth-child(3){animation-delay:.4s}.melt span:nth-child(4){animation-delay:.6s}.melt span:nth-child(5){animation-delay:.8s}.melt span:nth-child(6){animation-delay:1s}.endText{margin:35px auto 0;max-width:540px;font:italic 22px/1.55 'Cormorant Garamond';color:#ded3d7}.final{margin-top:26px;font:10px 'DM Mono';letter-spacing:3px;color:#ffffff55}.again{margin-top:28px;padding:10px 16px;border:1px solid #ffffff20;background:#ffffff05;color:#fff;border-radius:100px;font:9px 'DM Mono';letter-spacing:2px;cursor:pointer}@keyframes drip{0%,100%{transform:translateY(0);text-shadow:none}45%{transform:translateY(-8px);text-shadow:0 16px 0 #d88b9a33}65%{transform:translateY(3px)}}
+.nav{position:fixed;z-index:80;left:18px;bottom:34px;display:flex;gap:7px}.nav button{width:38px;height:38px;border-radius:50%;border:1px solid #ffffff18;background:#ffffff05;color:#fff;cursor:pointer;backdrop-filter:blur(10px)}
+@media(max-width:700px){.openingPlay{padding:10px 13px 10px 11px}.songHint{font-size:11px}.header{top:14px}.sound{top:43px}.slide{padding:62px 18px 70px}.s2 .inner,.s5 .inner{grid-template-columns:1fr;gap:20px}.s2 .inner{align-content:center}.ink{width:270px}.s2 h2{font-size:58px;text-align:center}.s2 .k,.s2 .tiny{text-align:center}.constellation{height:60vh}.s3 .quote{left:6%;top:35%;width:88%}.s3 h2{font-size:63px}.heart{transform:rotate(-45deg) scale(.8)}.s4 h2{font-size:72px}.chat{transform:rotate(1deg);max-width:360px}.messageIntro{text-align:center}.messageIntro h2{font-size:62px}.glass{border-radius:25px;padding:35px 25px}.glass h2{font-size:61px}.record{width:260px}.s7 h2{font-size:60px}.melt{font-size:82px;letter-spacing:-5px}.endText{font-size:20px;max-width:340px}.nav{bottom:28px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="aurora"></div><div class="orb"></div><div class="grain"></div>
+<header class="header"><div class="brand">HER / UNSPOKEN</div><div class="page" id="page">01 — 08</div></header>
+<button class="sound" id="sound" aria-label="Play song"><span class="soundBars"><i></i><i></i><i></i><i></i></span></button>
+<audio id="song" preload="metadata" loop><source src="song.mp3" type="audio/mpeg"></audio>
+<main class="stage">
+<section class="slide s1 active"><div class="inner"><div class="halo"></div><div><div class="k">a private little universe</div><h1>H<span>er</span>.</h1><div class="sub">There are some feelings that become more beautiful when they remain unsaid.</div><button class="enter" id="begin">enter quietly <span>→</span></button>
+<div class="openingSong">
+  <button class="openingPlay" id="openingPlay" aria-label="Play song">
+    <span class="miniHeart">♥</span>
+    <span class="openingPlayText">play the song</span>
+    <span class="miniBars"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <div class="songHint" id="songHint">a little music for what I can't say</div>
+</div></div></div></section>
+<section class="slide s2"><div class="inner"><div class="ink" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="reveal"><div class="k">01 / the beginning</div><h2>I noticed <em>you</em>.<br>Then I noticed everything.</h2><p class="muted">The little things. The way you speak. The way a normal moment somehow feels different when you're there.</p><div class="tiny" style="margin-top:22px">somewhere between noticing and caring, I lost the distance.</div></div></div></section>
+<section class="slide s3"><div class="inner constellation"><svg viewBox="0 0 1000 600" preserveAspectRatio="none"><path d="M70 480 C260 230 360 520 510 260 S760 90 930 190" stroke="#ffffff1c" fill="none"/><path d="M120 130 C300 330 460 70 620 330 S820 480 940 350" stroke="#d7b57c22" fill="none"/></svg><i class="star" style="left:9%;top:78%"></i><i class="star" style="left:27%;top:32%;animation-delay:.6s"></i><i class="star" style="left:49%;top:55%;animation-delay:1.1s"></i><i class="star" style="left:70%;top:18%;animation-delay:.2s"></i><i class="star" style="left:91%;top:31%;animation-delay:1.5s"></i><i class="star" style="left:77%;top:73%;animation-delay:.8s"></i><div class="quote"><div class="k">02 / the dangerous part</div><h2>Somehow, you became my <em>favorite thought.</em></h2><div class="foot">And you probably never even knew.</div></div></div></section>
+<section class="slide s4"><div class="inner"><div class="heartWrap"><div class="heart"><i></i></div></div><div class="k">03 / the truth</div><h2>I <span>love</span> you.</h2><div class="pulseLine"><svg viewBox="0 0 600 50"><path d="M0 25 H150 L170 25 L185 7 L200 43 L215 25 H310 L325 25 L340 12 L352 38 L365 25 H600"/></svg></div><p class="muted">Not the loud kind. Not the kind that asks for anything.<br>Just the kind that quietly stays.</p></div></section>
+<section class="slide s5"><div class="inner"><div class="messageIntro"><div class="k">04 / unsent</div><h2>What I<br><em>almost</em><br>said.</h2><p class="tiny">Typed. Deleted. Typed again.<br>Some messages are safer left unfinished.</p></div><div class="chat"><div class="chatTop"><div class="avatar"></div><div><b>Her</b><small>online somewhere</small></div></div><div class="bubble">Can I tell you something?</div><div class="bubble two">Never mind… it's nothing.</div><div class="typing">message deleted</div></div></div></section>
+<section class="slide s6"><div class="inner"><div class="glass"><div class="k">05 / if words had courage</div><h2>I love you <em>a lot lot lot</em><br>more than I know how to explain.</h2><p>Maybe in another lifetime I'd say it without being afraid of what comes after. In this one, I'll let the feeling exist quietly — without asking you to carry it.</p><div class="signature">— someone who secretly chose you</div></div></div></section>
+<section class="slide s7"><div class="inner"><div class="k">06 / the soundtrack</div><div class="record"></div><h2>For the moments<br>you'll never know about.</h2><p class="muted">Press play. Let the song say what I couldn't.</p><div class="player"><button class="play" id="play">▶</button><div class="wave" id="wave"><i></i><i></i><i></i><i></i><i></i></div><span class="tiny">song.mp3</span></div></div></section>
+<section class="slide s8"><div class="inner"><div class="k">07 / final note</div><div class="melt"><span>H</span><span>e</span><span>r</span><span>.</span></div><div class="endText">I may never tell you about my feelings in this lifetime.<br><br>But somewhere, quietly…<br><strong>you were loved.</strong></div><div class="final">TO ~ HER / FROM AN UNSPOKEN HEART</div><button class="again" id="again">read it again ↺</button></div></section>
+</main>
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div><div class="progress"><i id="bar"></i></div>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')],page=document.getElementById('page'),bar=document.getElementById('bar'),song=document.getElementById('song'),sound=document.getElementById('sound'),play=document.getElementById('play'),wave=document.getElementById('wave'),openingPlay=document.getElementById('openingPlay'),songHint=document.getElementById('songHint'),openingSong=document.querySelector('.openingSong');
+let current=0,locked=false;
+function go(n){if(locked)return;n=Math.max(0,Math.min(slides.length-1,n));if(n===current)return;locked=true;slides[current].classList.remove('active');current=n;slides[current].classList.add('active');page.textContent=String(current+1).padStart(2,'0')+' — 08';bar.style.width=((current+1)/slides.length*100)+'%';setTimeout(()=>locked=false,750)}
+function syncSongUI(on){
+  sound.classList.toggle('on',on);
+  wave.classList.toggle('on',on);
+  openingPlay.classList.toggle('playing',on);
+  openingSong.classList.toggle('playing',on);
+  play.textContent=on?'Ⅱ':'▶';
+  openingPlay.querySelector('.openingPlayText').textContent=on?'song is playing':'play the song';
+  songHint.textContent=on?'let it say what I cannot':'a little music for what I cannot say';
+}
+function toggleSong(){
+  if(song.paused){
+    song.play().then(()=>syncSongUI(true)).catch(()=>{
+      songHint.textContent='tap again to let the music begin';
+    });
+  }else{
+    song.pause();
+    syncSongUI(false);
+  }
+}
+document.getElementById('next').onclick=()=>go(current+1);document.getElementById('prev').onclick=()=>go(current-1);document.getElementById('begin').onclick=()=>go(1);document.getElementById('again').onclick=()=>go(0);sound.onclick=toggleSong;play.onclick=toggleSong;openingPlay.onclick=toggleSong;
+song.addEventListener('play',()=>syncSongUI(true));
+song.addEventListener('pause',()=>syncSongUI(false));
+song.addEventListener('ended',()=>syncSongUI(false));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')go(current+1);if(e.key==='ArrowLeft')go(current-1);});
+let sx=0,sy=0;document.addEventListener('touchstart',e=>{sx=e.changedTouches[0].clientX;sy=e.changedTouches[0].clientY},{passive:true});document.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)){dx<0?go(current+1):go(current-1)}},{passive:true});
+// gentle magnetic movement on the glass/card — disabled on touch devices
+if(window.matchMedia('(pointer:fine)').matches){document.querySelectorAll('.glass,.chat,.halo').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateX(${y*-4}deg) rotateY(${x*5}deg) translateY(-3px)`});el.addEventListener('pointerleave',()=>el.style.transform='')})}
+</script>
+</body></html>
